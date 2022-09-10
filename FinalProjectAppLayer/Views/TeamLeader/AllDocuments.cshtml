@@ -1,0 +1,81 @@
+﻿@using FinalProjectBusinessLayer.Entitys
+@model Document
+@*View all documents*@
+
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">All Documents</h4>
+            <div class="ml-auto text-right">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">All Duties</li>
+                        <li class="breadcrumb-item"><a href="#">All Documents</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                @{
+                    if (ViewBag.DutiesState == 1)
+                    {
+                        <div class="alert alert-success text-center" role="alert">
+                            This Duty Is Compleated..!
+                        </div>
+                    }
+                }
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                foreach (var item in (List<Document>)ViewBag.allDocuments)
+                                {
+                                    <tr>
+                                        <td>@item.Name</td>
+                                        <td>@item.Description</td>
+                                        @if (item.StatusID == 2)
+                                        {
+                                            <td><button type="button" class="btn btn-success">Approved</button></td>
+                                        }
+                                        else if (item.StatusID == 3)
+                                        {
+                                            <td><button type="button" class="btn btn-warning">Pending</button></td>
+                                        }
+                                        else if (item.StatusID == 4)
+                                        {
+                                            <td><button type="button" class="btn btn-danger">Rejected</button></td>
+                                        }
+                                        @if (item.StatusID == 2)
+                                        {
+                                            <td><a class="btn btn-outline-info" href="/TeamLeader/ViewDocuments?DutyID=@item.DutyID&&DocID=@item.DocumentID">View</a></td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <a class="btn btn-outline-info" href="/TeamLeader/ViewDocuments?DutyID=@item.DutyID&&DocID=@item.DocumentID&&StateID=@item.StatusID">View</a>
+                                            </td>
+                                        }
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

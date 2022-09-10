@@ -1,0 +1,70 @@
+﻿@using FinalProjectAppLayer.Models
+@model ProjectDTO
+@using FinalProjectBusinessLayer.Entitys
+
+@*Create new projects*@
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">All Projects</h4>
+            <div class="ml-auto text-right">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">All Projects</li>
+                        <li class="breadcrumb-item"><a href="#">Add New Project</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+
+                <form class="form-horizontal" asp-controller="ProjectManager" asp-action="InsertProject">
+                    <div class="form-group row">
+                        <label class="col-sm-3 text-right control-label col-form-label">Project Name</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Name" type="text" class="form-control" id="fname" placeholder="Project Name Here">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 text-right control-label col-form-label">Description</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Description" class="form-control" id="email1" placeholder="Description">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 text-right control-label col-form-label">Team Leader</label>
+                        <div class="col-sm-9">
+                            <select class="form-control s-example-basic-single" asp-for="TeamLeaderID">
+                                @{
+                                    foreach (var p in (List<TeamLeader>)ViewBag.AllTeamLeader)
+                                    {
+                                        <option value="@p.Id">@p.FullName</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 text-right control-label col-form-label">Deadline</label>
+                        <div class="col-sm-9">
+                            <input type="date" asp-for="Deadline" class="form-control" id="email1">
+                        </div>
+                    </div>
+                    <div class="border-top">
+                        <div class="card-body">
+                            <input type="submit" class="btn btn-outline-dark" value="Add">
+                        </div>
+                    </div>
+                </form>
+
+</div>
+</div>
+</div>
+</div>

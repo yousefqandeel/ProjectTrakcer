@@ -1,0 +1,14 @@
+﻿@*API Function*@
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: '/TeamLeader/getJSON',
+            method: 'Get',
+            dataType: 'json',
+            success: function (done) {
+                debugger;
+                $('#TeamLeaders').append('<li>' + done[0]+'</li>')
+            }
+        })
+    });
+</script>

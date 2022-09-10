@@ -1,0 +1,94 @@
+﻿@using FinalProjectBusinessLayer.Entitys
+@model Document
+
+@*View all documents*@
+
+<h1>View Work</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+       
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input asp-for="DocumentID" value="@Model.DocumentID" id="DocumentID" hidden class="form-control" />
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" disabled class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" disabled class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <a class="btn btn-primary" target="_blank" href="/TeamMember/AttachmentPreview?ID=@Model.DocumentAttatchments.LastOrDefault().ID">
+                    @Model.DocumentAttatchments.LastOrDefault().FileName
+                </a>
+            </div>
+
+            <div class="form-group">
+                <input asp-for="DutyID" type="hidden" class="form-control" />
+            </div>
+            <div class="form-group" id="note" hidden>
+                <label class="control-label">Rejection Note</label>
+                <textarea name="RejectionNote" id="RejectedNote" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Approve" id="Approve" class="btn btn-success" />
+                <input type="button" value="Reject" id="Rejected1" class="btn btn-outline-danger" />
+                <input type="button" value="Reject" id="Rejected" hidden class="btn btn-outline-danger" />
+                <input type="button"  value="Cancel" hidden id="Cancel" class="btn btn-outline-dark" />
+            </div>
+    </div>
+</div>
+<script>
+    $("#Rejected1").on('click', function () {
+        $("#Approve").hide();
+        $("#note").prop("hidden",false);
+        $("#Cancel").prop("hidden", false);
+        $("#Rejected1").prop("hidden", true);
+        $("#Rejected").prop("hidden", false);
+
+    })
+    $("#Cancel").on('click', function () {
+        $("#Approve").show()
+        $("#note").prop("hidden",true);
+        $("#Cancel").prop("hidden", true);
+        $("#Rejected1").prop("hidden", false);
+        $("#Rejected").prop("hidden", true);
+
+    })
+
+    $("#Approve").click(function () {
+        var DId = @Model.DocumentID;
+        $.ajax({
+            method: 'POST',
+            url: '/TeamLeader/Approve'
+            , data: { DocumentID: DId },
+            success: function (M) {
+                window.location.href = '/TeamLeader/AllDocuments?DutyID=' +@Model.DutyID;
+            }
+        })
+    })
+
+    $("#Rejected").click(function () {
+        var DId = @Model.DocumentID;
+        var Rn = $("#RejectedNote").val();
+        $.ajax({
+            method: 'POST',
+            url: '/TeamLeader/Rejected'
+            , data: { DocumentID: DId, RejectionNote: Rn },
+            success: function (M) {
+                window.location.href = '/TeamLeader/AllDocuments?DutyID=' +@Model.DutyID;
+            }
+        })
+    })
+</script>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

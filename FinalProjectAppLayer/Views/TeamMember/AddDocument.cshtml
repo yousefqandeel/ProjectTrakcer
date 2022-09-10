@@ -1,0 +1,64 @@
+﻿@using FinalProjectAppLayer.Models
+@using FinalProjectBusinessLayer.Entitys
+@model DocumentDTO
+@*Create new document*@
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">Add Document</h4>
+            <div class="ml-auto text-right">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">All Documents</li>
+                        <li class="breadcrumb-item"><a href="#">Add New Document</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+
+                <form class="form-horizontal" asp-controller="TeamMember" asp-action="insertDec" enctype="multipart/form-data" method="post">
+                    <div class="form-group row">
+                        <input name="DutyID" value="@ViewBag.dutyID" type="hidden" class="form-control" />
+                    </div>
+                    <div class="form-group row">
+                        <input asp-for="StateID" value="3" type="hidden" class="form-control" />
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 text-right control-label col-form-label">Title</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Name" type="text" class="form-control" id="fname" placeholder="Document Title Here">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 text-right control-label col-form-label">Description</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Description" class="form-control" id="email1" placeholder="Description">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 text-right control-label col-form-label">Upload Attachment</label>
+                        <div class="col-sm-9">
+                            <input name="File" type="file" class="form-control" id="email1">
+                        </div>
+                    </div>
+
+
+                    <div class="border-top">
+                        <div class="card-body">
+                            <input type="submit" class="btn btn-dark" value="Add">
+                        </div>
+                    </div>
+                </form>
+</div>
+</div>
+</div>
+</div>

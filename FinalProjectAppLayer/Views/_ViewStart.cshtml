@@ -1,0 +1,27 @@
+﻿@{          if (User.IsInRole("Admin"))
+    {
+        Layout = "AdminLayout";
+    }
+
+    else if (User.IsInRole("ProjectManager"))
+    {
+        Layout = "ProjectManagerLayout";
+    }
+    
+    else if (User.IsInRole("TeamLeader"))
+    {
+        Layout = "TeamLeaderLayout";
+    }
+
+    else if (User.IsInRole("TeamMember"))
+        {
+            Layout = "TeamMemberLayout";
+        }
+
+    else
+    {
+        Layout = "_LoginLayout";
+
+    }
+
+}

@@ -1,0 +1,77 @@
+﻿@using FinalProjectAppLayer.Models
+@model MemberDTO
+@*Add new member*@
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">Project Manger</h4>
+            <div class="ml-auto text-right">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Project Manager</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-12">
+
+            <div class="card">
+                <div class="row">
+                    <div class="col-8">
+
+
+                        <form class="form-horizontal" asp-controller="Member" asp-action="InsertMember">
+                            <br />
+                            <br />
+                            <div class="form-group row">
+                                <label class="col-sm-3 text-right control-label col-form-label">Full Name</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="FullName" type="text" class="form-control" id="fname" placeholder="Full Name Here">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 text-right control-label col-form-label">Email</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="Email" class="form-control" id="email1" placeholder="Email Name Here">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 text-right control-label col-form-label">Password</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="Password" type="password" class="form-control" id="lname" placeholder="Password Here">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 text-right control-label col-form-label">Position</label>
+                                <div class="col-sm-9">
+                                    <select name="Position" class="form-group btn-outline-dark">
+                                        <option value="1">Project Manager</option>
+                                        <option value="2">Team Leader</option>
+                                        <option value="3">Team Member</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="border-top">
+                                <div class="card-body">
+                                    <input type="submit" class="btn btn-outline-dark" value="Add">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+</div>
+</div>
+</div>

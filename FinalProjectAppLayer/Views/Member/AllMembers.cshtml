@@ -1,0 +1,60 @@
+﻿@using FinalProjectBusinessLayer.Entitys
+@model Member
+@*View All Members*@
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">All Members</h4>
+            <div class="ml-auto text-right">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">All Members</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-12">
+            <a class="btn btn-outline-dark" href="/Member/NewMember">Add New Member</a>
+
+            <div class="card">
+                @*//not neccesary*@
+                <table class="table">
+                    <thead class="thead">
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                    <tbody>
+                        @{
+                            foreach (var item in (List<Member>)ViewBag.allMembers)
+                            {
+
+                                <tr>
+                                    <td>@item.FullName</td>
+                                    <td>@item.Email</td>
+
+
+                                    <td>
+                                        <a class="btn btn-danger" href="/Member/deleteMember?id=@item.Id">Delete</a>
+                                        <a class="btn btn-outline-success" href="/Member/EditMember?id=@item.Id">Edit</a>
+                                    </td>
+
+                                </tr>
+
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+﻿@using FinalProjectBusinessLayer.Entitys
+@model Member
+@*View all duties*@
+
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">All Duties</h4>
+            <div class="ml-auto text-right">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">All Sprints</li>
+                        <li class="breadcrumb-item"><a href="#">All Duties</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-12">
+            <a class="btn btn-outline-dark" href="/TeamLeader/AddDuty?SprintID=@ViewBag.sprintID">New Duty</a>
+
+            <div class="card">
+
+                
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Member</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            foreach (var item in (List<Duty>)ViewBag.allDuties)
+                            {
+                                <tr>
+                                    <td>@item.DutyName</td>
+                                    <td>@item.DutyDesctiption</td>
+                                    @{
+                                        foreach (var memberDTO in (List<TeamMemberForProject>)ViewBag.teamMembers)
+                                        {
+                                            if (memberDTO.SprintID == item.SprintID)
+                                            {
+                                                if (memberDTO.RoleID == "4")
+                                                {
+                                                    <td>@memberDTO.UserName</td>
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    @if (item.StatusID == 1)
+                                    {
+                                        <td><button type="button" class="btn btn-success">Completed</button></td>
+                                    }
+                                    else if (item.StatusID == 3)
+                                    {
+                                        <td><button type="button" class="btn btn-warning">Pending</button></td>
+                                    }
+                                    else if (item.StatusID == 4)
+                                    {
+                                        <td><button type="button" class="btn btn-danger">Rejected</button></td>
+                                    }
+                                    <td>
+                                        <a class="btn btn-outline-primary" href="/TeamLeader/AllDocuments?DutyID=@item.DutyID">View</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+</div>
+</div>
+</div>
+</div>

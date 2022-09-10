@@ -1,0 +1,21 @@
+﻿@using FinalProjectAppLayer.Models
+@model DutyDTO
+@* /////////// *@
+<form action="/TeamLeader/InsertDuty">
+
+    <div class="form-group">
+        <input name="DutyID" value="@ViewBag.dutyID" type="hidden" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <input type="text" asp-for="Description" value="@ViewBag.DocumentList.Description"  disabled class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Upload Attachment</label>
+        <input type="file" asp-for="Attachment" disabled class="form-control" />
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Accept" />
+    <input type="submit" class="btn btn-danger" value="Reject" />
+
+</form>

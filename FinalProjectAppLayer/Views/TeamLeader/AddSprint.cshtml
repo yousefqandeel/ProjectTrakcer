@@ -1,0 +1,46 @@
+﻿@using FinalProjectAppLayer.Models
+@model SprintDTO
+
+@*Create new sprints*@
+
+<form class="form-horizontal" asp-controller="TeamLeader" asp-action="InsertSprint">
+
+    <h4 class="card-title">Document Info</h4>
+    <div class="form-group row">
+        <input name="ProjectID" value="@ViewBag.projectID" type="hidden" class="form-control" />
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-3 text-right control-label col-form-label">Title</label>
+        <div class="col-sm-9">
+            <input asp-for="Name" type="text" class="form-control" id="fname" placeholder="Sprint Name Here">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-3 text-right control-label col-form-label">Description</label>
+        <div class="col-sm-9">
+            <input asp-for="Description" class="form-control" id="email1" placeholder="Description Here">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-3 text-right control-label col-form-label">Start</label>
+        <div class="col-sm-9">
+            <input type="date" asp-for="StartDate" class="form-control" id="email1">
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <label class="col-sm-3 text-right control-label col-form-label">End</label>
+        <div class="col-sm-9">
+            <input type="date" asp-for="EndDate" class="form-control" id="email1">
+        </div>
+    </div>
+
+
+    <div class="border-top">
+        <div class="card-body">
+            <input type="submit" class="btn btn-outline-dark" value="Add">
+        </div>
+    </div>
+</form>
+

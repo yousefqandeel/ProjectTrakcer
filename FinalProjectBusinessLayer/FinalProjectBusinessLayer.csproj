@@ -1,0 +1,118 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20220813115245_CreatingDB.cs" />
+    <Compile Remove="Data\Migrations\20220813115245_CreatingDB.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220813123345_addingTables.cs" />
+    <Compile Remove="Data\Migrations\20220813123345_addingTables.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220813123755_addingTables.cs" />
+    <Compile Remove="Data\Migrations\20220813123755_addingTables.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220813124428_addingTables.cs" />
+    <Compile Remove="Data\Migrations\20220813124428_addingTables.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220813124648_addingTables.cs" />
+    <Compile Remove="Data\Migrations\20220813124648_addingTables.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220813124941_addingTables.cs" />
+    <Compile Remove="Data\Migrations\20220813124941_addingTables.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220813180237_addBand.cs" />
+    <Compile Remove="Data\Migrations\20220813180237_addBand.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220813180425_addBand.cs" />
+    <Compile Remove="Data\Migrations\20220813180425_addBand.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220816130506_addSprintID.cs" />
+    <Compile Remove="Data\Migrations\20220816130506_addSprintID.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220816131101_deleteDuties.cs" />
+    <Compile Remove="Data\Migrations\20220816131101_deleteDuties.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220816132042_addDuties.cs" />
+    <Compile Remove="Data\Migrations\20220816132042_addDuties.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220816132931_addDuties.cs" />
+    <Compile Remove="Data\Migrations\20220816132931_addDuties.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220816133202_addDuties.cs" />
+    <Compile Remove="Data\Migrations\20220816133202_addDuties.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220816133305_addDuties.cs" />
+    <Compile Remove="Data\Migrations\20220816133305_addDuties.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220816133535_addDuties.cs" />
+    <Compile Remove="Data\Migrations\20220816133535_addDuties.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220816134749_addDuties.cs" />
+    <Compile Remove="Data\Migrations\20220816134749_addDuties.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220826084844_view.cs" />
+    <Compile Remove="Data\Migrations\20220826084844_view.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220828161050_addingProjectMem.cs" />
+    <Compile Remove="Data\Migrations\20220828161050_addingProjectMem.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220828161554_adding.cs" />
+    <Compile Remove="Data\Migrations\20220828161554_adding.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220828162012_addingDocumentTable.cs" />
+    <Compile Remove="Data\Migrations\20220828162012_addingDocumentTable.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220828162342_addingDocumentTable.cs" />
+    <Compile Remove="Data\Migrations\20220828162342_addingDocumentTable.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220829104740_addTeamMemberID.cs" />
+    <Compile Remove="Data\Migrations\20220829104740_addTeamMemberID.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220902190039_add.cs" />
+    <Compile Remove="Data\Migrations\20220902190039_add.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220902190502_adding.cs" />
+    <Compile Remove="Data\Migrations\20220902190502_adding.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220902191040_adding2.cs" />
+    <Compile Remove="Data\Migrations\20220902191040_adding2.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220902192244_finally.cs" />
+    <Compile Remove="Data\Migrations\20220902192244_finally.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220902192451_changingID.cs" />
+    <Compile Remove="Data\Migrations\20220902192451_changingID.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220902195625_addingids.cs" />
+    <Compile Remove="Data\Migrations\20220902195625_addingids.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220902200234_c.cs" />
+    <Compile Remove="Data\Migrations\20220902200234_c.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220905163140_newdatabase.cs" />
+    <Compile Remove="Data\Migrations\20220905163140_newdatabase.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220905163811_newmigration.cs" />
+    <Compile Remove="Data\Migrations\20220905163811_newmigration.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220910113739_addingHistory.cs" />
+    <Compile Remove="Data\Migrations\20220910113739_addingHistory.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220910114326_addingHistory.cs" />
+    <Compile Remove="Data\Migrations\20220910114326_addingHistory.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220910124139_addingHistory.cs" />
+    <Compile Remove="Data\Migrations\20220910124139_addingHistory.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220910124529_addingHistory.cs" />
+    <Compile Remove="Data\Migrations\20220910124529_addingHistory.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220910125437_gHistory.cs" />
+    <Compile Remove="Data\Migrations\20220910125437_gHistory.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220910130223_x.cs" />
+    <Compile Remove="Data\Migrations\20220910130223_x.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\owner\.nuget\packages\bootstrap\4.6.1\contentFiles\any\any\wwwroot\css\bootstrap-grid.css" />
+    <Content Remove="C:\Users\owner\.nuget\packages\bootstrap\4.6.1\contentFiles\any\any\wwwroot\css\bootstrap-grid.css.map" />
+    <Content Remove="C:\Users\owner\.nuget\packages\bootstrap\4.6.1\contentFiles\any\any\wwwroot\css\bootstrap-grid.min.css" />
+    <Content Remove="C:\Users\owner\.nuget\packages\bootstrap\4.6.1\contentFiles\any\any\wwwroot\css\bootstrap-grid.min.css.map" />
+    <Content Remove="C:\Users\owner\.nuget\packages\bootstrap\4.6.1\contentFiles\any\any\wwwroot\css\bootstrap-reboot.css" />
+    <Content Remove="C:\Users\owner\.nuget\packages\bootstrap\4.6.1\contentFiles\any\any\wwwroot\css\bootstrap-reboot.css.map" />
+    <Content Remove="C:\Users\owner\.nuget\packages\bootstrap\4.6.1\contentFiles\any\any\wwwroot\css\bootstrap-reboot.min.css" />
+    <Content Remove="C:\Users\owner\.nuget\packages\bootstrap\4.6.1\contentFiles\any\any\wwwroot\css\bootstrap-reboot.min.css.map" />
+    <Content Remove="C:\Users\owner\.nuget\packages\bootstrap\4.6.1\contentFiles\any\any\wwwroot\css\bootstrap.css" />
+    <Content Remove="C:\Users\owner\.nuget\packages\bootstrap\4.6.1\contentFiles\any\any\wwwroot\css\bootstrap.css.map" />
+    <Content Remove="C:\Users\owner\.nuget\packages\bootstrap\4.6.1\contentFiles\any\any\wwwroot\css\bootstrap.min.css" />
+    <Content Remove="C:\Users\owner\.nuget\packages\bootstrap\4.6.1\contentFiles\any\any\wwwroot\css\bootstrap.min.css.map" />
+    <Content Remove="C:\Users\owner\.nuget\packages\bootstrap\4.6.1\contentFiles\any\any\wwwroot\js\bootstrap.bundle.js" />
+    <Content Remove="C:\Users\owner\.nuget\packages\bootstrap\4.6.1\contentFiles\any\any\wwwroot\js\bootstrap.bundle.js.map" />
+    <Content Remove="C:\Users\owner\.nuget\packages\bootstrap\4.6.1\contentFiles\any\any\wwwroot\js\bootstrap.bundle.min.js" />
+    <Content Remove="C:\Users\owner\.nuget\packages\bootstrap\4.6.1\contentFiles\any\any\wwwroot\js\bootstrap.bundle.min.js.map" />
+    <Content Remove="C:\Users\owner\.nuget\packages\bootstrap\4.6.1\contentFiles\any\any\wwwroot\js\bootstrap.js" />
+    <Content Remove="C:\Users\owner\.nuget\packages\bootstrap\4.6.1\contentFiles\any\any\wwwroot\js\bootstrap.js.map" />
+    <Content Remove="C:\Users\owner\.nuget\packages\bootstrap\4.6.1\contentFiles\any\any\wwwroot\js\bootstrap.min.js" />
+    <Content Remove="C:\Users\owner\.nuget\packages\bootstrap\4.6.1\contentFiles\any\any\wwwroot\js\bootstrap.min.js.map" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.23" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.23" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.23" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.23" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.23">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

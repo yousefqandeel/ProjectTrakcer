@@ -1,0 +1,69 @@
+﻿@using FinalProjectAppLayer.Models
+@using FinalProjectBusinessLayer.Entitys
+@model DutyDTO
+@*Create new duties*@
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">Add Duty</h4>
+            <div class="ml-auto text-right">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">All Documents</li>
+                        <li class="breadcrumb-item"><a href="#">Add New Duty</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+
+                <form class="form-horizontal" asp-controller="TeamLeader" asp-action="InsertDuty">
+                    <div class="form-group row">
+                        <input name="SprintID" value="@ViewBag.sprintID" type="hidden" class="form-control" />
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 text-right control-label col-form-label">Title</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Name" type="text" class="form-control" id="fname" placeholder="Duty Name Here">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 text-right control-label col-form-label">Member</label>
+                        <div class="col-sm-9">
+                            <select asp-for="TeamMemberID" class="form-control s-example-basic-single">
+                                @{
+                                    foreach (var teamMember in (List<TeamMember>)ViewBag.AllTeamLeader)
+                                    {
+                                        <option value="@teamMember.Id">@teamMember.FullName</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 text-right control-label col-form-label">Description</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Description" type="text" class="form-control" id="fname" placeholder="Description Here">
+                        </div>
+                    </div>
+
+
+                    <div class="border-top">
+                        <div class="card-body">
+                            <input type="submit" class="btn btn-dark" value="Add">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
